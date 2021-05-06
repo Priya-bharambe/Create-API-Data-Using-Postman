@@ -1,0 +1,44 @@
+<div class="container-fluid bg">
+    <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-10">
+            <h2 style="text-align: center;"><b> Employee's Data</b></h2><br>
+            <div class="table-responsive">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th scope="col">ID</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Email</th>
+                            <th scope="col">Contact</th>
+                            <th scope="col">Address</th>
+                            <th scope="col">Profile</th>
+                            <th scope="col"></th>
+                            <th scope="col"></th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let item of collection">
+                            <td>{{ item.id }}</td>
+                            <td>{{ item.name }}</td>
+                            <td>{{ item.email }}</td>
+                            <td>{{ item.contact }}</td>
+                            <td>{{ item.address }}</td>
+                            <td>{{ item.profile }}</td>
+                            <td>
+                                <i (click)="deleteRestApi(item.id)" class="fas fa-eraser" style="font-size:20px;"></i>
+                            </td>
+                            <td>
+                                <a routerLink="/update/{{item.id}}">
+                                    <i class="fas fa-edit" style="font-size:20px;margin: 4px;"></i>
+                                </a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="col-md-1"></div>
+    </div>
+</div>
